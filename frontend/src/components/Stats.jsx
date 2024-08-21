@@ -3,7 +3,7 @@ import React from 'react'
 const Stats = () => {
     return (
         <div className='stats-wrapper'>
-            <div className="container">
+            <div className="container stats-container">
                 <div className="row row-cols-1 row-cols-md-4 g-2 text-center">
                     <div className="col">
                         <div className="stat-card m-3 py-5 border border-black border-2">
