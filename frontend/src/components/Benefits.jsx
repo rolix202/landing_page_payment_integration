@@ -1,5 +1,6 @@
 import React from 'react';
 import pointingMan from '../assets/pointingg.png';
+import network from '../assets/network.png'
 
 const benefitsList = [
   {
@@ -72,7 +73,12 @@ const Benefits = () => {
             <img
               src={pointingMan}
               alt="Pointing Man"
-              className="man-image img-fluid"
+              className="man-image img-fluid d-none d-md-block"
+            />
+            <img
+              src={network}
+              alt="Networking"
+              className="img-fluid d-md-none network-image"
             />
           </div>
           <div className="col-md-5">

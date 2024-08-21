@@ -94,7 +94,7 @@ h1, h2, h3 {
   background-color: #fff;
   padding: 15px;
   width: 15%;
-  margin: 15px;
+  margin: 15px; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -132,6 +132,12 @@ h1, h2, h3 {
 .man-image {
   width: 100%;
   max-width: 250px;
+  margin: 0 auto;
+}
+
+.network-image{
+  width: 100%;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -607,6 +613,15 @@ h1, h2, h3 {
     }
     .partner-items:hover {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .benefit-content{
+      text-align: center;
+    }
+    .benefit-content h3{
+      font-weight: 600;
+    }
+    .solution{
+      padding-top: 50px;
     }
  }
 
