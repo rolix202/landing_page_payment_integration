@@ -709,6 +709,12 @@ h3 {
     display: flex;
     justify-content: center;
   }
+  .ticket-grid {
+    display: block;
+  }
+  .ticket-card{
+    margin-top: 40px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
