@@ -605,6 +605,9 @@ h3 {
   .stat-card::before {
     display: none;
   }
+  .stat-card{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
   .ticket-header h1 {
     font-size: 2em;
@@ -631,9 +634,9 @@ h3 {
     font-size: 1.3em;
   }
 
-  .ticket-grid {
+  /* .ticket-grid {
     padding-inline: 60px;
-  }
+  } */
 
   .card-content p {
     font-size: 15px;
@@ -714,6 +717,9 @@ h3 {
   }
   .ticket-card{
     margin-top: 40px;
+  }
+  .card-content ul{
+    text-align: left !important;
   }
 }
 
