@@ -266,35 +266,28 @@ h3 {
   text-align: center;
   margin-bottom: 40px;
   padding: 100px 20px 60px 20px;
-  /* border-radius: 10px; */
   background-color: rgba(0, 0, 0, 0.6);
-  /* Dark background for better contrast */
   color: #ffffff;
-  /* White text color for high contrast */
 }
 
 .ticket-header h1 {
   font-size: 3em;
   color: #ffffff;
-  /* Ensure heading is visible */
 }
 
 .early-bird-notice {
   font-size: 1.5em;
   color: #FFD700;
-  /* Gold color for emphasis */
   font-weight: 700;
 }
 
 .countdown {
   font-size: 1.2em;
   color: #FFFFFF;
-  /* White color for text */
 }
 
 .countdown .text-emphasis {
   color: #FF6347;
-  /* Tomato color for emphasis */
 }
 
 
@@ -378,9 +371,6 @@ h3 {
   color: var(--secondary-color);
 }
 
-/* .ticket-card .btn-danger {
-  background-color: var(--secondary-color) !important;
-} */
 
 .regular-btn,
 .vip-btn,
@@ -394,6 +384,10 @@ h3 {
   margin: 20px auto 0;
   width: fit-content;
   cursor: pointer;
+}
+.foot_logo img{
+  width: 50%;
+  height: auto;
 }
 
 .ticket-card .btn:hover,
@@ -434,6 +428,13 @@ h3 {
 .text-emphasis {
   font-weight: 700;
   color: var(--primary-color);
+}
+
+.footer-copyright{
+  border-top: 1px solid rgba(161, 161, 161, 0.685);
+}
+.footer-copyright p{
+  font-size: 15px;
 }
 
 /* benefits */
@@ -602,7 +603,111 @@ h3 {
 
 @media (max-width: 576px) {
   .stat-card::before {
-   display: none;
+    display: none;
+  }
+
+  .ticket-header h1 {
+    font-size: 2em;
+  }
+
+  .early-bird-notice {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
+  .countdown {
+    font-size: 0.9em;
+  }
+
+  .card-content h2 {
+    font-size: 1.5em;
+  }
+
+  .old-price {
+    font-size: 0.8em;
+  }
+
+  .current-price {
+    font-size: 1.3em;
+  }
+
+  .ticket-grid {
+    padding-inline: 60px;
+  }
+
+  .card-content p {
+    font-size: 15px;
+  }
+
+  .ticket-card ul li {
+    font-size: 14px;
+  }
+
+  .regular-btn,
+  .vip-btn,
+  .executive-btn {
+    font-size: 0.8em;
+  }
+  .miss{
+    padding-top: 100px;
+  }
+  .why h1 {
+    font-size: 27px;
+  }
+  .business_img{
+    width: 100%;
+    height: auto;
+  }
+  .benefit-card h5{
+    font-size: 17px;
+  }
+  .benefit-card p{
+    font-size: 15px;
+  }
+  .icon-container{
+    min-width: 60px;
+    min-height: 60px;
+  }
+  .icon-container i{
+    font-size: 20px;
+  }
+  .bene_lists{
+    padding-top: 20px;
+  }
+  .foot_logo{
+    display: flex;
+    justify-content: center;
+  }
+  .foot_logo img{
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+  }
+  .foot_desc p{
+    text-align: center;
+    font-size: 16px;
+  }
+  .foot_desc .button{
+    display: flex;
+    justify-content: center;
+  }
+  .foot_details{
+    padding-top: 50px;
+    padding-inline: 10px;
+  }
+  .foot_details h3{
+    text-align: center;
+  }
+  .foot_details p{
+    text-align: center;
+  }
+  .foot-img{
+    width: 70%;
+    height: auto;
+  }
+  .foot-img-wrapper{
+    display: flex;
+    justify-content: center;
   }
 }
 

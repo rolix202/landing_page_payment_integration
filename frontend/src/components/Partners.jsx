@@ -18,15 +18,6 @@ const listOfPartners = [
 
 const Items = (props) => {
   return (
-    // <div className="d-flex flex-wrap justify-content-between align-items-center">
-
-    //   {props.listOfPartners.map((each, index) => (
-    //     <div className="partner-item" key={index}>
-    //       <img src={each.name} alt={`Partner ${index}`} className="img-fluid partner_img" />
-    //     </div>
-    //   ))}
-    // </div>
-
     <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 d-flex  justify-content-center w-75 mx-auto partners-container'>
       {props.listOfPartners.map((each, index) => (
         <div className="col partner-items d-flex justify-content-center" key={index}>
