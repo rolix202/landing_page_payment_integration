@@ -40,12 +40,12 @@ const MissingOut = () => {
                     <h1 className="text-center mb-4">Imagine Missing Out On:</h1>
                 </div>
                 <div className="row pt-5">
-                    <div className="col-md-6 d-flex align-items-center">
+                    <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center">
                         <div className="business_wrapper">
                             <img src={businessmen} alt="" className='business_img'/>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-12 col-lg-6">
                         <div className="row row-cols-1 g-4 bene_lists">
                             {missing_out_list.map((list, index) => (
                                 <BenefitsItem key={index} benefit={list} /> 

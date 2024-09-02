@@ -4,7 +4,7 @@ import '../App.css';
 
 const Ticket = () => {
     return (
-        <div className="ticket-page">
+        <div className="ticket-page" id='tickets'>
             <div className="ticket-page-again">
                 <div className="custom-shape-divider-top-1722684012">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -22,35 +22,35 @@ const Ticket = () => {
                     <p className="countdown">⏳ Early bird prices end on <span className='text-emphasis'>August 10th, 2024</span> . Don't miss out!</p>
                 </div>
 
-                <div className="container text-center">
+                <div className="container">
                     <div className="ticket-grid">
                         {/* Regular Ticket */}
                         <div className="ticket-card regular-ticket">
                             <div className="card-content">
-                                <h2><i className="fas fa-user pe-2"></i>Regular</h2>
+                                <h2 className='text-center'><i className="fas fa-user pe-2"></i>Regular</h2>
                                 <div className="price-section">
                                     <span className="old-price">₦3,000</span>
                                     <span className="current-price">₦1,500</span>
                                 </div>
-                                <p>Basic conference experience for individuals.</p>
+                                <p className='text-center'>Basic conference experience for individuals.</p>
                                 <ul>
                                     <li><i className="fas fa-chair"></i> Regular seating</li>
                                     <li><i className="fas fa-door-open"></i> Access to all sessions</li>
                                     <li><i className="fas fa-book"></i> Event brochure</li>
                                 </ul>
                             </div>
-                            <button className="btn btn-danger regular-btn">Get Regular Ticket</button>
+                            <a href='/regular-ticket' className="btn btn-danger regular-btn">Get Regular Ticket</a>
                         </div>
 
                         {/* VIP Ticket */}
                         <div className="ticket-card vip-ticket">
                             <div className="card-content">
-                                <h2> <i className="fas fa-crown pe-2"></i> VIP</h2>
+                                <h2 className='text-center'> <i className="fas fa-crown pe-2"></i> VIP</h2>
                                 <div className="price-section">
                                     <span className="old-price">₦15,000</span>
                                     <span className="current-price">₦10,000</span>
                                 </div>
-                                <p>Ideal for solopreneurs, creators, freelancers and digital workers.</p>
+                                <p className='text-center'>Ideal for solopreneurs, creators, freelancers and digital workers.</p>
                                 <ul>
                                     <li><i className="fas fa-crown"></i> VIP seating</li>
                                     <li><i className="fas fa-network-wired"></i> Access to VIP lounge</li>
@@ -60,18 +60,18 @@ const Ticket = () => {
                                     <li><i className="fas fa-book"></i> Free book "Welcome to Tech"</li>
                                 </ul>
                             </div>
-                            <button className="btn btn-primary vip-btn">Get VIP Ticket</button>
+                            <a href='/vip-ticket' className="btn btn-primary vip-btn">Get VIP Ticket</a>
                         </div>
 
                         {/* Executive Ticket */}
                         <div className="ticket-card executive-ticket">
                             <div className="card-content">
-                                <h2><i className="fas fa-briefcase pe-2"></i>Executive</h2>
+                                <h2 className='text-center'><i className="fas fa-briefcase pe-2"></i>Executive</h2>
                                 <div className="price-section">
                                     <span className="old-price">₦40,000</span>
                                     <span className="current-price">₦20,000</span>
                                 </div>
-                                <p>Best for teams, youth groups, startups and founders.</p>
+                                <p className='text-center'>Best for teams, youth groups, startups and founders.</p>
                                 <ul>
                                     <li><i className="fas fa-check"></i> All VIP benefits</li>
                                     <li><i className="fas fa-users"></i> 3 regular tickets</li>
@@ -82,7 +82,7 @@ const Ticket = () => {
                                     <li><i className="fas fa-book"></i> Access to 4 books</li>
                                 </ul>
                             </div>
-                            <button className="btn btn-danger executive-btn">Get Executive Ticket</button>
+                            <a href='/executive-ticket' className="btn btn-danger executive-btn">Get Executive Ticket</a>
                         </div>
                     </div>
                 </div>

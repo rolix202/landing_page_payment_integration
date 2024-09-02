@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 
 const NavBar = () => {
+  const paths = window.location.pathname
+  
+  const url = paths === "/" ? "#tickets" : "/#tickets";
+
   return (
     <div className="container menu_b">
       <nav className="navbar navbar-expand-lg">
@@ -14,10 +18,10 @@ const NavBar = () => {
           <div className="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                <a className="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Tickets</a>
+                <a className="nav-link" href={url} >Tickets</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Contact</a>

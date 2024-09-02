@@ -677,41 +677,7 @@ h3 {
   .bene_lists{
     padding-top: 20px;
   }
-  .foot_logo{
-    display: flex;
-    justify-content: center;
-  }
-  .foot_logo img{
-    width: 80%;
-    text-align: center;
-    padding: 20px;
-  }
-  .foot_desc p{
-    text-align: center;
-    font-size: 16px;
-  }
-  .foot_desc .button{
-    display: flex;
-    justify-content: center;
-  }
-  .foot_details{
-    padding-top: 50px;
-    padding-inline: 10px;
-  }
-  .foot_details h3{
-    text-align: center;
-  }
-  .foot_details p{
-    text-align: center;
-  }
-  .foot-img{
-    width: 70%;
-    height: auto;
-  }
-  .foot-img-wrapper{
-    display: flex;
-    justify-content: center;
-  }
+  
   .ticket-grid {
     display: block;
   }
@@ -811,6 +777,48 @@ h3 {
   .stat-card:hover::before {
     transform: translate(-197px, 22px);
   }
+  .bene_lists{
+    padding-top: 20px;
+  }
+  .business_img{
+    width: 100%;
+    height: auto;
+  }
+  .foot_logo{
+    display: flex;
+    justify-content: center;
+  }
+  .foot_logo img{
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+  }
+  .foot_desc p{
+    text-align: center;
+    font-size: 16px;
+  }
+  .foot_desc .button{
+    display: flex;
+    justify-content: center;
+  }
+  .foot_details{
+    padding-top: 50px;
+    padding-inline: 10px;
+  }
+  .foot_details h3{
+    text-align: center;
+  }
+  .foot_details p{
+    text-align: center;
+  }
+  .foot-img{
+    width: 70%;
+    height: auto;
+  }
+  .foot-img-wrapper{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -847,6 +855,7 @@ h3 {
   .partners-container {
     width: 100% !important;
   }
+  
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -871,6 +880,7 @@ h3 {
   .img-festival {
     padding-top: 10px !important;
   }
+ 
 
 }
 
@@ -893,4 +903,9 @@ h3 {
     width: 45%;
   }
 
+}
+
+.r_info_wrapper{
+  background-color: #F2F2F2;
+  height: 100vh;
 }
