@@ -825,6 +825,9 @@ h3 {
   .reserve_ticket{
     justify-content: center;
   }
+  .reserve_ticket h2{
+    text-align: center;
+  }
   .price_ticket{
     text-align: center !important;
   }
