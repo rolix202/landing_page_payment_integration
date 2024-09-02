@@ -10,9 +10,9 @@ const Header = () => {
         <div className="location">
           <small className='fs-6'> <span>August 24th 2024</span> | The Big Tent, Calabar</small>
         </div>
-        <div className="call_to_action">
+        {/* <div className="call_to_action">
           <a href='#tickets' className='btn btn-danger button'>Secure Your Spot Now!</a>
-        </div>
+        </div> */}
       </div> 
     </div>
   );
