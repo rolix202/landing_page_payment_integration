@@ -23,13 +23,13 @@ const RegularInfo = () => {
 
     return (
         <div className="r_info_wrapper">
-            <div className="w-75 mx-auto p-5">
+            <div className="payment_form w-75 mx-auto p-5">
                 <div className="row pt-5">
-                    <div className="col-md-6 d-flex align-items-center">
+                    <div className="col-12 col-md-8 d-flex align-items-center reserve_ticket">
                         <h2 className='fw-medium'>Reserve your Ticket NOW!</h2>
                     </div>
-                    <div className="col-md-6 ">
-                        <p className='lead fs-1 fw-bolder text-end'>&#8358;{price} </p>
+                    <div className="col-12 col-md-4">
+                        <p className='lead fs-1 fw-bolder text-end price_ticket'>&#8358;{price} </p>
                     </div>
                 </div>
 

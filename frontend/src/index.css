@@ -819,6 +819,18 @@ h3 {
     display: flex;
     justify-content: center;
   }
+  .payment_form{
+    width: 100% !important;
+  }
+  .reserve_ticket{
+    justify-content: center;
+  }
+  .price_ticket{
+    text-align: center !important;
+  }
+  .form-input button{
+    width: 100%;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */

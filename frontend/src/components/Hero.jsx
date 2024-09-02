@@ -27,7 +27,7 @@ const Hero = () => {
                 <div className="img-festival pt-4">
                   <img src={heroLogo} alt="Calabar festival ideas 2024" className='small_logo'/>
                 </div>
-                <p className='pt-5'><button className='btn btn-danger btn-lg spot'>Secure your spot NOW!</button></p>
+                <p className='pt-5'><a href='#tickets' className='btn btn-danger btn-lg spot'>Secure your spot NOW!</a></p>
                 <p className='fst-italic pt-1 limited_offer'>Limited seats available. Don't miss out!</p>
               </div>
               <div className="col-lg-5 d-none d-lg-block d-flex align-items-center">

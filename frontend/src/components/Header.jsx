@@ -11,7 +11,7 @@ const Header = () => {
           <small className='fs-6'> <span>August 24th 2024</span> | The Big Tent, Calabar</small>
         </div>
         <div className="call_to_action">
-          <button className='btn btn-danger button'>Secure Your Spot Now!</button>
+          <a href='#tickets' className='btn btn-danger button'>Secure Your Spot Now!</a>
         </div>
       </div> 
     </div>

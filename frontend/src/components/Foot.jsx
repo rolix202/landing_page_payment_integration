@@ -14,7 +14,7 @@ const Foot = () => {
                         <p className='text-white pt-4'>Don’t wait – get your early bird ticket now and join us in Calabar for an unforgettable experience.</p>
                         <p className='text-white'>The future is yours to shape!</p>
                         <div className="button">
-                            <button className='btn btn-danger'>Grab Your Ticket Now!</button>
+                            <a href='#tickets' className='btn btn-danger'>Grab Your Ticket Now!</a>
                         </div>
                     </div>
                     <div className="col-md-6">
