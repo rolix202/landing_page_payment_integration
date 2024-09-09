@@ -18,9 +18,7 @@ const RegularInfo = () => {
     const base_url = window.location.origin
 
     const backendEndpoint = import.meta.env.VITE_BACKEND_ENDPOINT;
-
-    console.log(backendEndpoint);
-
+    
     const ticketInfo = useMemo(() => ({
         "/regular-ticket": { price: "1,500", type: "Regular" },
         "/vip-ticket": { price: "10,000", type: "VIP" },
