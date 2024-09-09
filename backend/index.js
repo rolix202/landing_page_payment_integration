@@ -104,6 +104,9 @@ app.get("/verify-payment", async (req, res) => {
         })
 
         const responseStatus = response.data?.data.status
+
+        // console.log(responseStatus);
+
         if (responseStatus === "success"){
             res.status(200).json({
                 message: "Payment comfirmed!"

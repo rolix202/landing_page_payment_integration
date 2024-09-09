@@ -6,6 +6,8 @@ const VerifyPayment = () => {
   const [status, setStatus] = useState("Verifying ...")
   const base_url = window.location.origin
 
+  const backendEndpoint = import.meta.env.VITE_BACKEND_ENDPOINT;
+
   useEffect(() => {
     const verifyPayment = async () => {
       const urlParam = new URLSearchParams(window.location.search)
@@ -14,7 +16,7 @@ const VerifyPayment = () => {
 
       if (reference) {
         try {
-          const response = await axios.get(`${base_url}/verify-payment?reference=${reference}`)
+          const response = await axios.get(`${backendEndpoint}/verify-payment?reference=${reference}`)
           setStatus(response.data.message)
         } catch (error) {
           console.log(error);
