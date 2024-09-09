@@ -1,64 +1,72 @@
-import express from "express";
+import express, { json } from "express";
 import logger from "morgan";
 import https from "https";
 import axios from "axios";
+import cors from "cors";
+import { body, validationResult } from "express-validator";
 import * as dotenv from "dotenv";
 dotenv.config()
 const app = express()
 
 app.use(logger("dev"))
+app.use(cors())
+app.use(express.json())
 
 
-app.post("/initialize-payment", async (req, res) => {
-    // const params = JSON.stringify({
-    //     "email": "swiftcoder147@gmail.com",
-    //     "amount": "50000"
-    // })
+const ticket_info = {
+    regular: 1500,
+    vip: 10000,
+    executive: 20000
+}
 
-    // const options = {
-    //     hostname: 'api.paystack.co',
-    //     port: 443,
-    //     path: '/transaction/initialize',
-    //     method: 'POST',
-    //     headers: {
-    //         Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
-    //         'Content-Type': 'application/json'
-    //     }
-    // }
+app.post("/initialize-payment", [
+    body("first_name").notEmpty().withMessage("First name is required!").escape().trim(),
+    body("last_name").notEmpty().withMessage("Last name is required!").escape().trim(),
+    body("email").notEmpty().withMessage("Email is required!").isEmail().withMessage("Not a valid email address!") .trim(),
+    body("phone_no").notEmpty().withMessage("Phone number is required!").matches(/^(\+234|0)[789]\d{9}$/).withMessage("Invalid phone number").trim().escape(),
+    body("ticket_type").notEmpty().withMessage("Ticket type is required!").escape().trim().toLowerCase(),
+], async (req, res) => {
 
-    // const paystackReq = https.request(options, resPaystack => {
-    //     let data = ''
+    const errors = validationResult(req)
 
-    //     resPaystack.on('data', (chunk) => {
-    //         data += chunk
-    //     })
+    if (!errors.isEmpty()){
+        const errorMessaage = errors.array().map((err) => err.msg)
 
-    //     resPaystack.on('end', () => {
-    //         console.log(JSON.parse(data));
-    //     })
-    // })
-    // paystackReq.on('error', error => {
-    //     console.log(error);
-    // })
+        return res.status(400).json({
+            error: errorMessaage
+        })
+    }
 
-    // paystackReq.write(params)
-    // paystackReq.end()
+    const { first_name, last_name, email, phone_no, ticket_type, base_url } = req.body
 
+    if(!ticket_info[ticket_type]){
+        return res.status(400).json({ error: "Invalid ticket type."})
+    }
+
+    const amount = ticket_info[ticket_type] * 100;
+
+    
     try {
         const paystackRes = await axios.post('https://api.paystack.co/transaction/initialize', {
-            "email": "swiftcoder147@gmail.com",
-            "amount": "500000000",
+            "email": email,
+            "amount": amount,
+            callback_url: `${base_url}/verify-payment`,
             metadata: {
                 "custom_fields": [
                     {
-                        "display_name": "Name",
-                        "variable_name": "Name",
-                        "value": "Roland Oodo"
+                        "display_name": "First Name",
+                        "variable_name": "first_name",
+                        "value": first_name
+                    },
+                    {
+                        "display_name": "Last Name",
+                        "variable_name": "last_name",
+                        "value": last_name
                     },
                     {
                         "display_name": "Phone Number",
-                        "variable_name": "Phone Number",
-                        "value": "09033528556"
+                        "variable_name": "phone",
+                        "value": phone_no
                     }
                 ]
             }
@@ -70,12 +78,42 @@ app.post("/initialize-payment", async (req, res) => {
                 }
             }
         )
+        // console.log("Paystack Response Data:", paystackRes.data);
 
-        res.json(paystackRes.data);
+        res.status(200).json(paystackRes.data);
 
     } catch (error) {
-        console.log(error.response ? error.response.data : error.message);
-        res.status(500).json({ error: 'Payment initialization failed' });
+        console.log(error);
+        res.status(500).json({ error: "Payment initialization failed." });
+    }
+})
+
+app.get("/verify-payment", async (req, res) => {
+    const { reference } = req.query
+    
+    if (!reference){
+        return res.status(404).json({error: "Invalid Payment ID"})
+    }
+
+    try {
+        const response = await axios.get(`https://api.paystack.co/transaction/verify/${reference}`, {
+            headers: {
+                Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const responseStatus = response.data?.data.status
+        if (responseStatus === "success"){
+            res.status(200).json({
+                message: "Payment comfirmed!"
+            })
+        } else {
+            res.status(400).json("Payment confrimation failed. Try again!")
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({ error: 'Payment verification failed' });
     }
 })
 
