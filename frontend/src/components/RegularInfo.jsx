@@ -17,6 +17,9 @@ const RegularInfo = () => {
     const paths = window.location.pathname;
     const base_url = window.location.origin
 
+    const backendEndpoint = import.meta.env.VITE_BACKEND_ENDPOINT;
+
+    console.log(backendEndpoint);
 
     const ticketInfo = useMemo(() => ({
         "/regular-ticket": { price: "1,500", type: "Regular" },
@@ -62,7 +65,7 @@ const RegularInfo = () => {
 
         try {
             setLoader(true)
-            const response = await axios.post("http://localhost:5000/initialize-payment", ticketInfo);
+            const response = await axios.post(`${backendEndpoint}/initialize-payment`, ticketInfo);
 
             if (response.data.data && response.data.data.authorization_url) {
                 window.location.href = response.data.data.authorization_url

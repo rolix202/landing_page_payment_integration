@@ -4,6 +4,7 @@ import axios from 'axios'
 const VerifyPayment = () => {
 
   const [status, setStatus] = useState("Verifying ...")
+  const base_url = window.location.origin
 
   useEffect(() => {
     const verifyPayment = async () => {
@@ -13,7 +14,7 @@ const VerifyPayment = () => {
 
       if (reference) {
         try {
-          const response = await axios.get(`http://localhost:5000/verify-payment?reference=${reference}`)
+          const response = await axios.get(`${base_url}/verify-payment?reference=${reference}`)
           setStatus(response.data.message)
         } catch (error) {
           console.log(error);
